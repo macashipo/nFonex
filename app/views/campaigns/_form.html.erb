@@ -1,0 +1,52 @@
+<div id="new_content"><!-- New content -->
+<%= form_for @campaign do |f| %>
+  <%= f.error_messages %>
+  
+            	<div id="new_content_Campaign_All"><!-- New content campaign All -->
+                	<div id="new_content_Campaign_All_tr"><!-- tr -->
+                    	<div id="new_content_Campaign_All_tr_Name">
+                        	<%= f.label :name %>
+                        </div>
+                        <div id="new_content_Campaign_All_tr_TxtName">
+                        	<%= f.text_field :name, :size=>112 %>
+                        </div>
+                    </div><!-- End tr -->
+                    <div id="new_content_Campaign_All_tr"><!-- tr -->
+                    	<div id="new_content_Campaign_All_tr_author">
+                        	STATUS:
+                        </div>
+                        <div id="new_content_Campaign_All_tr_Txt_Author">
+                        	<%= f.select :status_id, options_for_select(Status.load_states_hash,@campaign.status_id), :size=>45%>
+                        </div>
+                        <div id="new_content_Campaign_All_tr_status">
+                        	CATEGORIES:
+                        </div>
+                         <div id="new_content_Campaign_All_tr_Txt_Author">
+                       	   	<%= f.select :category_id, options_for_select(Category.load_states_hash,@campaign.category_id), :size=>45%>
+                         </div>
+                         
+                    </div><!-- End tr -->
+                    
+                
+  
+  <%= f.fields_for :questions do |builder| %>
+    <%= render "question_fields", :f => builder %>
+  <% end %>
+  <div id="new_content_tr_btnAddQuestion"><!-- btn Add question -->
+                	<div id="new_content_btnAddQuestion"> 
+                    	<%= link_to_add_fields image_tag("btn_AddQuestion.png"), f, :questions %>
+                    </div>
+  
+  
+  <div id="new_content_tr_btnSave"><!-- tr_btnSave -->
+                	<div id="new_content_btnSave">                	
+                   	  <%= image_submit_tag("btn_Save.png")%>
+                    </div>
+                    <div id="new_content_btnPublish"> <a href="#"><img src="/images/bnt_publish.png" border="0" /></a>
+                    </div>
+                    	
+                </div><!-- End tr_btnSave -->
+<% end %>
+
+</div>	<!-- New content campaign All -->
+

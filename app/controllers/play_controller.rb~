@@ -1,0 +1,16 @@
+class PlayController < ApplicationController
+  def start
+  	  @campains = Campaign.all
+  end
+
+  def go
+  	  @campaign  
+  end
+
+  def finish
+  end
+
+  def result
+  end
+
+end

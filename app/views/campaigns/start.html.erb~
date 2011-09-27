@@ -1,0 +1,27 @@
+<% title "Campaign" %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @campaign.name %>
+</p>
+
+<ol>  
+  <% for question in @campaign.questions %>  
+  <li><%= h question.content %></li>
+	<ul>
+  	<% for answer in question.answers %>  
+	<li><%= h answer.content %>
+	<% if answer.correct?%>
+	<b><u>(( Correct Answer ))</b></u>
+	<%end%>
+	</li>
+  	<% end %>
+  	</ul>
+  <% end %>  
+</ol>  
+  
+<p>  
+  <%= link_to "Edit", edit_campaign_path(@campaign) %> |  
+  <%= link_to "Destroy", @campaign, :confirm => 'Are you sure?', :method => :delete %> |  
+  <%= link_to "View All", campaigns_path %>  
+</p>  

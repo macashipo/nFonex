@@ -1,0 +1,20 @@
+
+<%= form_for @campaign do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+    <%= f.select :status_id, options_for_select(Status.load_states_hash,@campaign.status_id)%>
+    <%= f.select :category_id, options_for_select(Category.load_states_hash,@campaign.category_id)%>
+  </p>
+  <ol>
+  <%= f.fields_for :questions do |builder| %>
+    <%= render "question_fields", :f => builder %>
+  <% end %>
+  </ol>
+  <p><%= link_to_add_fields "Add Question", f, :questions %></p>
+  <p><%= f.submit "Submit" %></p>
+<% end %>
+
+
+

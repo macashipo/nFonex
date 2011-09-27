@@ -1,0 +1,8 @@
+<p class="fields">
+  <%= f.label :content, "Answer" %>
+  <%= f.text_field :content %>
+  <%= f.label :url_answer, "Sound URL" %> 
+  <%= f.text_field :url_answer %>
+  <%= f.check_box :correct %> Correct?
+  <%= link_to_remove_fields image_tag("btn_delete.png",:size=>'25x25'), f %>
+</p>

@@ -1,0 +1,24 @@
+<p class="fields">
+ 
+                        <div id="new_content_Question_All_tr"><!-- TR -->
+                    	<div id="new_content_Question_All_tr_Answer">
+                        	<%= f.label :content, "Answer:" %>
+                        </div>
+                      <div id="new_content_Question_All_tr_cHK">
+                        	<%= f.check_box :correct %>
+                      </div>
+                         <div id="new_content_Campaign_All_tr_Txt_Author">
+                        	<%= f.text_field :content , :size=>45%>
+                        </div>
+                        <div id="new_content_Question_All_tr_soundURL">
+                        	<%= f.label :url_answer, "Sound URL:" %> 
+                        </div>
+                         <div id="new_content_Campaign_All_tr_Txt_Author">
+                        	<%= f.text_field :url_answer, :size=>45 %> 
+                          </div>
+                          <div id="new_content_Campaign_All_tr_dELETE">
+                         	<%= link_to_remove_fields image_tag("btn_Delete2.png"), f %>
+                         </div> 
+                        </div><!-- END TR -->
+                        
+</p>

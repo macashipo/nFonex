@@ -1,0 +1,9 @@
+<% title "Edit Campaign" %>
+<div id="content"><!-- Open_content -->
+<%= render 'form' %>
+
+<p>
+  <%= link_to "Show", @campaign %> |
+  <%= link_to "View All", campaigns_path %>
+</p>
+</div><!-- End_content -->

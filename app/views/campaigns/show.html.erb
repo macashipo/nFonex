@@ -1,0 +1,80 @@
+﻿<% title "Show Campaign" %>
+<div id="containt"><!-- open containt-->
+        
+        	<div id="view_content"><!-- View_content -->
+            	<div id="view_content_Name">
+                	<%= @campaign.name %>
+                </div>
+                <div id="view_content_describe"><!-- DESCRIBE -->
+                	 <div id="view_content_describe_authorStatus">
+                     	AUTHOR:
+                     </div>
+                     <div id="view_content_describe_authorStatus2">
+                     	<%= @campaign.user.name.upcase %>
+                     </div>
+                     <div id="view_content_describe_authorStatus">
+                     	STATUS:
+                     </div>
+                     <div id="view_content_describe_authorStatus2">
+                     	<%= @campaign.status.name.upcase %>
+                     </div>
+                </div><!-- END DESCRIBE -->
+                <% for question in @campaign.questions %>
+                <div id="view_content_Question_Combo"><!-- Question combo -->
+                
+                	<div id="view_content_Question_Combo_Question"><!-- question -->
+                    	<div id="view_content_Question_Combo_Question_speaker">
+                        	<%if FileTest.exists?(question.url_question)%>
+					<img src="/images/speaker.png" />
+				<%else%>
+					<img src="/images/speaker_mute.png" />
+				<%end%>
+                        </div>
+                        <div id="view_content_Question_Combo_Question_Number">
+                        	<%= question.index_question %>:
+                        </div>
+                        <div id="view_content_Question_Combo_Question_Question">
+                        	<%= question.content %>
+                        </div>
+                    </div><!-- End question -->
+                    <% for answer in question.answers %>
+                    <div id="view_content_Question_Combo_AnserAll"><!-- All question -->                    
+                    	<div id="view_content_Question_Combo_Answer"><!-- Combo Answer -->
+                    		<div id="view_content_Question_Combo_Question_speaker">
+                    			<%if FileTest.exists?(answer.url_answer)%>
+                        			<img src="/images/speaker.png" />
+                        		<%else%>
+                        			<img src="/images/speaker_mute.png" />
+                        		<%end%>
+                    		
+                        	</div>
+                        <div id="view_content_Question_Combo_Question_Number">
+                        <%= question.index_question %>.<%= "#{question.answers.index(answer)+1}" %>
+                        </div>
+                        <div id="view_content_Question_Combo_Answer_Answer">
+                        	<% if answer.correct?%>
+                        	<b><u><%=h answer.content %></b></u>
+                        	<%else%>
+                        	<%=h answer.content %>
+                        	<%end%>	
+                        </div>
+                   	  </div><!-- combo Answer -->
+                      
+                      <!-- ------------------------ -->
+                    </div><!-- End All question -->
+                    <%end%>
+                </div><!-- End Question_combo -->
+                <%end%>
+                
+                <!-- -------------------Question combo----------------------------- -->
+                
+                
+                <div id="containt_content_PageBreak">
+                	<div id="containt_content_PageBreak_Previous">
+                    	
+                    </div>
+                </div>
+                
+            </div><!-- End View_content -->
+        	
+        </div><!-- End containt-->

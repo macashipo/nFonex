@@ -1,0 +1,70 @@
+<div id="content"><!-- Open_content -->
+        <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+  
+        	<div id="login_content"><!-- Open__Login_content -->
+            	<div id="login_content_SignIn_top">
+                </div>
+                <div id="login_content_SignIn_Middle"><!-- Open__Login_conten_Middle -->
+                	<div id="login_content_SignIn_Middle_tr0">
+                    </div>
+                	<div id="login_content_SignIn_Middle_tr"><!-- Open__Login_conten_Middle_tr -->
+                    	<div id="login_content_SignIn_Middle_tr_td1">
+                        	<%= f.label :email %><br />
+  
+                        </div>
+                        <div id="login_content_SignIn_Middle_tr_td2">
+                        	<%= f.email_field :email ,:size=>'50' %>
+                        </div>
+                    </div><!-- End_Login_conten_Middle_tr -->
+                    
+                    <!-- ------------------------------------------- -->
+                    <div id="login_content_SignIn_Middle_tr"><!-- Open__Login_conten_Middle_tr -->
+                    	<div id="login_content_SignIn_Middle_tr_td1">
+                        	<%= f.label :password %><br />
+                        </div>
+                        <div id="login_content_SignIn_Middle_tr_td2">
+                        	<%= f.password_field :password ,:size=>'50'%>
+                        </div>
+                    </div><!-- End_Login_conten_Middle_tr -->
+                    
+                    <!-- ------------------------------------------- -->
+                    <div id="login_content_SignIn_Middle_tr"><!-- Open__Login_conten_Middle_tr -->
+                    	<div id="login_content_SignIn_Middle_tr_td1">
+                        	
+                        </div>
+                    <div id="login_content_SignIn_Middle_tr_td2">                        	
+                    	<div id="login_content_SignIn_Middle_tr_tdCkb">
+                            	<% if devise_mapping.rememberable? -%>
+                            	<%= f.check_box :remember_me %> <%= f.label :remember_me %>
+                            	<% end -%>
+                            </div>
+                                  
+                    <div id="login_content_SignIn_Middle_tr_tdRemember">
+                            	
+                            </div>
+                    </div>
+                    </div><!-- End_Login_conten_Middle_tr -->
+                    
+                     <!-- ------------------------------------------- -->
+                    <div id="login_content_SignIn_Middle_tr"><!-- Open__Login_conten_Middle_tr -->
+                    	<div id="login_content_SignIn_Middle_tr_td1">
+                        	
+                        </div>
+                        <div id="login_content_SignIn_Middle_tr_td2"> 
+                       		 <div><%= f.submit "Submit", :type => :image, :src=> '/images/btn_Login.png?1316578528' %></div>
+                        </div>
+                  
+                    </div><!-- End_Login_conten_Middle_tr -->
+                    
+                    <div id="login_content_SignIn_Middle_tr">
+                    	<div id="login_content_SignIn_Middle_tr_SignIn">
+                    	<%= render :partial => "devise/shared/links" %>
+                      </div>
+                    </div>
+                
+                </div><!-- End_Login_conten_Middle -->
+            	<div id="login_content_SignIn_bottom">
+                </div>
+            </div><!-- End_Login_content -->
+        	               <% end %>     
+ 		</div><!-- End_content -->

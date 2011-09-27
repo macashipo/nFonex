@@ -1,0 +1,172 @@
+<% title "Campaigns" %>
+<div id="content"><!-- Open_content -->
+<%- flash.each do |name, msg| -%>
+    <%= content_tag :div, msg, :id => "flash_#{name}" %>
+    <%- end -%>
+    
+    <div id="containt"><!-- open containt-->
+        	<div id="containt_status"><!-- open containt_status-->
+            <%= link_to "All(#{Campaign.count})", campaigns_path%>| 
+            <%= link_to "Activated(#{Campaign.activated.count})", campaigns_path(:status_id=>"1") %> |
+            <%= link_to "Inactivated(#{Campaign.inactivated.count})", campaigns_path(:status_id=>"2") %>|
+            <a href="#">Unreleased</a> | 
+            <a href="#">Closed</a>
+        </div><!-- End containt_status-->
+        
+        <div id="containt_content"><!-- Open Ccontaint_content -->
+       	  <div id="containt_content_content_left"><!-- Open containt_content_left -->
+            
+            	<div id="containt_content_content_left_categories"><!-- Open containt_content_left_categories -->
+                	<div id="containt_content_content_left_categories_title">
+                    	Categories
+                    </div>
+                    <div id="containt_content_content_left_categories_Content"><!-- content_left_categories_Content -->
+                    	<ul>
+                    	  <%Category.all.each do |category|%>
+                    	  <li><%= link_to category.name.upcase, campaigns_path(:category_id=>category.id) %></li>
+                    	  <%end%>
+                  	</ul>
+               	  </div><!-- End content_left_categories_Content -->
+                </div><!-- End containt_content_left_categories -->
+                
+                <div id="containt_content_content_left_filter"><!-- containt_content_content_left_filter -->
+                	<div id="containt_content_content_left_categories_title">
+                    	Filter
+                    </div>
+                    <div id="containt_content_content_left_filter_content">
+                    <div id="containt_content_content_left_filter_titleSearch">
+                    	SEARCH TITLE
+                    </div>
+                    <div id="containt_content_content_left_filter_Textbox">
+                    	<input type="text" size="28" />
+                    </div>
+                    <div id="containt_content_content_left_filter_titleSearch">
+                    	SEARCH AUTHOR
+                    </div>
+                    <div id="containt_content_content_left_filter_Textbox">
+                    	<input type="text" size="28" />
+                    </div>
+                    <div id="containt_content_content_left_filter_titleSearch">
+                    	CREATE ART
+                    </div>
+                     <div id="containt_content_content_left_filter_Textbox">
+                    	<div id="containt_content_content_left_filter_Textbox_CreateAt">
+                        	<input type="text" size="11" />
+                       </div>
+                        <div id="containt_content_content_left_filter_Textbox_CreateAt2">
+                        	<input type="text" size="11" />
+                        </div>
+                    </div>
+                    
+                    
+            <div id="containt_content_content_left_filter_Btn">
+                    	<div id="containt_content_content_left_filter_btnFilter">
+                   			<a href="#">Filter</a>
+       					</div>
+                        <div id="containt_content_content_left_filter_btn_Clear">
+                   			<a href="#">Clear</a>
+                    	</div>
+                  </div>
+                  </div><!-- End containt_content_content_left_filter_content -->
+                </div><!-- End containt_content_content_left_filter -->
+                
+            </div><!-- End containt_content_left -->
+            
+             <!-- ----------------------------------------------------------------------------- -->
+                <div id="containt_content_content_right"><!-- Open containt_content_right -->
+                	<div id="containt_content_content_right_tableCampaign"><!-- Open containt_content_right_table_campaign -->
+                    	<div id="containt_content_content_right_tableCampaign_title"><!-- Open containt_content_right_table_campaign_title -->
+                        	
+                        	<div id="containt_content_content_right_tableCampaign_title_Id">
+                            	Id
+                            </div>
+                            <div id="containt_content_content_right_tableCampaign_title_Name">
+                            	Campaign name
+                            </div>
+                            <div id="containt_content_content_right_tableCampaign_title_Author">
+                            	Author
+                            </div>
+                            <div id="containt_content_content_right_tableCampaign_title_Author">
+                            	Categories
+                            </div>
+                            <div id="containt_content_content_right_tableCampaign_title_Author">
+                            	Amount
+                            </div>
+                             <div id="containt_content_content_right_tableCampaign_title_Author">
+                            	
+                            </div>                     
+                       </div><!-- End containt_content_right_table_campaign_title -->
+                       
+                       <!-- -------------------------------------------------------------------- -->
+                       <% @campaigns.each do |campaign| %>
+                       <div id="containt_content_content_right_tableCampaign_tr"><!-- tr1 -->
+                       		<div id="containt_content_content_right_tableCampaign_tr_Id">
+                            	<%= "#{campaign.id}"%>
+                            </div>
+                            <div id="containt_content_content_right_tableCampaign_tr_CampaignName">
+                            <%="#{campaign.name}" %>
+                            </div>
+                            <div id="containt_content_content_right_tableCampaign_tr_Author">
+                            	<%= campaign.user.name %>
+                            </div>
+                            <div id="containt_content_content_right_tableCampaign_tr_Author">
+                            	<%= campaign.category.name %>
+                            </div>
+                            <div id="containt_content_content_right_tableCampaign_tr_Author">
+                            	<%= campaign.questions.count %> questions
+                            </div>
+                            <div id="containt_content_content_right_tableCampaign_tr_Author"><!-- Action -->
+                            	<div id="containt_content_content_right_tableCampaign_tr_btnView"> 
+                               	  <%= link_to image_tag("icon_view.png"), campaign%>
+                                </div>
+                                <div id="containt_content_content_right_tableCampaign_tr_btnEdit">
+                                  <%= link_to image_tag("icon_Edit.png"), edit_campaign_path(campaign)%>
+                                </div>
+                                <div id="containt_content_content_right_tableCampaign_tr_btnDelete">
+                                  <%= link_to image_tag("icon_Delete.png"), campaign, :confirm => 'Are you sure?', :method => :delete %>
+                                </div>
+                            </div><!--End Action -->
+                       	
+                       </div><!-- End tr1 -->                      
+                        	
+                        	<% end %>
+                    	
+                    </div><!-- End containt_content_right_table_campaign -->
+                    
+                </div><!-- End containt_content_right -->
+                <div id="containt_content_PageBreak">
+                	<div id="containt_content_PageBreak_Previous">
+                    	<%= paginate @campaigns %>
+                    </div>
+                </div>
+        </div><!-- End Ccontaint_content -->
+      </div><!-- End containt-->
+
+    
+      
+		
+            <!-- ------------------------------------------------------ -->
+            
+<div id="content_tr3"><!-- content_tr3 -->
+           		  
+</div><!-- End content_tr3 -->
+            
+            
+            <!-- -------------------------------- -->
+            <div id="content_tr4">
+            	<div id="content_tr4_btnCreate">
+                	<img src="images/btn_create-new-campaign.png" />
+                </div>
+                <div id="content_tr4_TextCreate">
+               	 
+               	
+</div>
+                    
+ 		</div>
+	    
+
+  
+
+
+
+

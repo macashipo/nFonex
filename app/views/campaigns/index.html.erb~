@@ -1,0 +1,195 @@
+<% title "Campaigns" %>
+<div id="content"><!-- Open_content -->
+<%- flash.each do |name, msg| -%>
+    <%= content_tag :div, msg, :id => "flash_#{name}" %>
+    <%- end -%>
+<% @campaigns.each_with_index do |campaign,index| %>
+    
+      
+		<% if index==0 %>
+        	<div id="content_tr1"><!-- Open_content_tr1 -->
+            	<div id="content_tr1_campaign"><!-- Open_content_tr1 _campaign-->
+                	<div id="content_tr1_campaign_top">
+                    	<%= "ID: #{campaign.id} - #{campaign.category.name} " %>
+                    </div>
+                    <div id="content_tr1_campaign_middle"><!-- Open_content_tr1 _campaign_middle-->
+                    	<div id="content_tr1_campaign_middle_title">
+                        	<%= link_to campaign.name, campaign %></div>
+                        <div id="content_tr1_campaign_middle_question">
+                       		<span class="text_orange"><%= campaign.questions.count %></span> questions 
+                        </div>
+                        <div id="content_tr1_campaign_middle_status">
+                        	Author: <%= campaign.user.email %>
+                        	
+                        	
+                        </div>
+                    </div><!-- End_content_tr1 _campaign_middle-->
+                    <div id="content_tr1_campaign_bottom">
+                    </div>                   	
+                </div><!-- End_content_tr1 _campaign-->
+                <!-- ---------------------------------------- --> 
+		<% elsif index==1 then%>
+                 <div id="content_tr1_campaign_2"><!-- Open Campaign 2 -->
+                 	<div id="content_tr1_campaign_top">
+                    	<%= "ID: #{campaign.id} - #{campaign.category.name} " %></div>
+                    <div id="content_tr1_campaign_middle"><!-- Open_content_tr1 _campaign_middle-->
+                    	<div id="content_tr1_campaign_middle_title">
+                       	<%= link_to campaign.name, campaign %></div>          
+                        <div id="content_tr1_campaign_middle_question">
+                       		<span class="text_orange"><%= campaign.questions.count %></span> questions 
+                        </div>
+                        <div id="content_tr1_campaign_middle_status">
+                        	Status: <%= campaign.status.name %>
+                        </div>
+                    </div><!-- End_content_tr1 _campaign_middle-->
+                    <div id="content_tr1_campaign_bottom">
+                    </div>                                   	
+                 </div> <!-- End Campaign 2 -->
+                 <!-- ---------------------------------------- --> 
+		<% elsif index==2 then%>
+                 <div id="content_tr1_campaign_2"><!-- Open Campaign 2 -->
+                 	<div id="content_tr1_campaign_top">
+                    	<%= "ID: #{campaign.id} - #{campaign.category.name} " %></div>
+                    <div id="content_tr1_campaign_middle"><!-- Open_content_tr1 _campaign_middle-->
+                    	<div id="content_tr1_campaign_middle_title">
+                       	<%= link_to campaign.name, campaign %></div>
+                        <div id="content_tr1_campaign_middle_question">
+                       		<span class="text_orange"><%= campaign.questions.count %></span> questions 
+                        </div>
+                        <div id="content_tr1_campaign_middle_status">
+                        	Status: <%= campaign.status.name %>
+                        </div>
+                    </div><!-- End_content_tr1 _campaign_middle-->
+                    <div id="content_tr1_campaign_bottom">
+                    </div>                                   	
+                 </div> <!-- End Campaign 3 -->
+                 <!-- ---------------------------------------- --> 
+		<% elsif index==3 then%>
+                 <div id="content_tr1_campaign_2"><!-- Open Campaign 2 -->
+                 	<div id="content_tr1_campaign_top">
+                    	<%= "ID: #{campaign.id} - #{campaign.category.name} " %></div>
+                    <div id="content_tr1_campaign_middle"><!-- Open_content_tr1 _campaign_middle-->
+                    	<div id="content_tr1_campaign_middle_title">
+                       	<%= link_to campaign.name, campaign %></div>
+                        <div id="content_tr1_campaign_middle_question">
+                       		<span class="text_orange"><%= campaign.questions.count %></span> questions 
+                        </div>
+                        <div id="content_tr1_campaign_middle_status">
+                        	Status: <%= campaign.status.name %>
+                        </div>
+                    </div><!-- End_content_tr1 _campaign_middle-->
+                    <div id="content_tr1_campaign_bottom">
+                    </div>                                   	
+                 </div> <!-- End Campaign 4 -->
+            </div><!-- End_content_tr1 -->
+            
+            <!-- ------------------------------------------ -->
+		<% elsif index==4 then%>
+            <div id="content_tr2"> <!-- Open tr_2 -->
+            	<div id="content_tr1_campaign"><!-- Open_content_tr1 _campaign-->
+                	<div id="content_tr1_campaign_top">
+                    	<%= "ID: #{campaign.id} - #{campaign.category.name} " %>
+                    </div>
+                    <div id="content_tr1_campaign_middle"><!-- Open_content_tr1 _campaign_middle-->
+                    	<div id="content_tr1_campaign_middle_title">
+                        	<%= link_to campaign.name, campaign %></div>
+                        <div id="content_tr1_campaign_middle_question">
+                       		<span class="text_orange"><%= campaign.questions.count %></span> questions 
+                        </div>
+                        <div id="content_tr1_campaign_middle_status">
+                        	Status: <%= campaign.status.name %>
+                        </div>
+                    </div><!-- End_content_tr1 _campaign_middle-->
+                    <div id="content_tr1_campaign_bottom">
+                    </div>                   	
+                </div><!-- End_content_tr1 _campaign-->
+                <!-- ---------------------------------------- --> 
+		<% elsif index==5 then%>
+                 <div id="content_tr1_campaign_2"><!-- Open Campaign 2 -->
+                 	<div id="content_tr1_campaign_top">
+                    	<%= "ID: #{campaign.id} - #{campaign.category.name} " %>
+                    </div>
+                    <div id="content_tr1_campaign_middle"><!-- Open_content_tr1 _campaign_middle-->
+                    	<div id="content_tr1_campaign_middle_title">
+                       	<%= link_to campaign.name, campaign %></div>
+                        <div id="content_tr1_campaign_middle_question">
+                       		<span class="text_orange"><%= campaign.questions.count %></span> questions 
+                        </div>
+                        <div id="content_tr1_campaign_middle_status">
+                        	Status: <%= campaign.status.name %>
+                        </div>
+                    </div><!-- End_content_tr1 _campaign_middle-->
+                    <div id="content_tr1_campaign_bottom">
+                    </div>                                   	
+                 </div> <!-- End Campaign 6 -->
+                 <!-- ---------------------------------------- --> 
+		<% elsif index==6 then%>
+                 <div id="content_tr1_campaign_2"><!-- Open Campaign 2 -->
+                 	<div id="content_tr1_campaign_top">
+                    	<%= "ID: #{campaign.id} - #{campaign.category.name} " %>
+                    </div>
+                    <div id="content_tr1_campaign_middle"><!-- Open_content_tr1 _campaign_middle-->
+                    	<div id="content_tr1_campaign_middle_title">
+                       	<%= link_to campaign.name, campaign %></div>
+                        <div id="content_tr1_campaign_middle_question">
+                       		<span class="text_orange"><%= campaign.questions.count %></span> questions 
+                        </div>
+                        <div id="content_tr1_campaign_middle_status">
+                        	Status: <%= campaign.status.name %>
+                        </div>
+                    </div><!-- End_content_tr1 _campaign_middle-->
+                    <div id="content_tr1_campaign_bottom">
+                    </div>                                   	
+                 </div> <!-- End Campaign 7 -->
+                 <!-- ---------------------------------------- --> 
+		<% elsif index==7 then%>
+                 <div id="content_tr1_campaign_2"><!-- Open Campaign 2 -->
+                 	<div id="content_tr1_campaign_top">
+                    	<%= "ID: #{campaign.id} - #{campaign.category.name} " %>
+                    </div>
+                    <div id="content_tr1_campaign_middle"><!-- Open_content_tr1 _campaign_middle-->
+                    	<div id="content_tr1_campaign_middle_title">
+                       	<%= link_to campaign.name, campaign %></div>
+                        <div id="content_tr1_campaign_middle_question">
+                       		<span class="text_orange"><%= campaign.questions.count %></span> questions 
+                        </div>
+                        <div id="content_tr1_campaign_middle_status">
+                        	Status: <%= campaign.status.name %>
+                        </div>
+                    </div><!-- End_content_tr1 _campaign_middle-->
+                    <div id="content_tr1_campaign_bottom">
+                    </div>                                   	
+                 </div> <!-- End Campaign 8 -->           	
+            </div><!-- End tr_2 -->
+		<% end %>
+		     
+    
+  <% end %>
+            <!-- ------------------------------------------------------ -->
+            
+<div id="content_tr3"><!-- content_tr3 -->
+           		<%= paginate @campaigns %>  
+</div><!-- End content_tr3 -->
+            
+            
+            <!-- -------------------------------- -->
+            <div id="content_tr4">
+            	<div id="content_tr4_btnCreate">
+                	<img src="images/btn_create-new-campaign.png" />
+                </div>
+                <div id="content_tr4_TextCreate">
+               	<%= link_to "New Campaign", new_campaign_path %> 
+               	<%= link_to "Activated", campaigns_path(:status_id=>"1") %><%= "(#{Campaign.activated.count})" %>
+               	<%= link_to "Inactivated", campaigns_path(:status_id=>"2") %><%= "(#{Campaign.inactivated.count})" %>
+               	<%= link_to "Internet", campaigns_path(:category_id=>1) %><%= "(#{Campaign.activated.count})" %>
+               	<%= link_to "Social", campaigns_path(:category_id=>"2") %> <%= "(#{Campaign.activated.count})" %>
+</div>
+                    
+ 		</div>
+	    
+
+  
+
+
+
+

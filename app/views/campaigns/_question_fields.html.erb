@@ -1,0 +1,35 @@
+<div id="new_content_Question_All"><!-- Question All -->
+<div class="fields">
+                	<div id="new_content_Question_All_tr"><!-- TR -->
+                    	<div id="new_content_Question_All_tr_Question">
+                        	<%= f.label :content, "Question:" %>
+                        </div>
+                      <div id="new_content_Question_All_tr_cHK" class="WHITE">
+                        	DDD
+                      </div>
+                         <div id="new_content_Campaign_All_tr_Txt_Author">
+                        	<%= f.text_field :content, :rows => 1, :size => 45%>
+                        </div>
+                        <div id="new_content_Question_All_tr_soundURL">
+                        	<%= f.label :content, "Sound URL:" %>
+                        </div>
+                         <div id="new_content_Campaign_All_tr_Txt_Author">
+                        	<%= f.text_field :url_question, :rows => 1, :size=>45 %>
+                         </div> 
+                         <div id="new_content_Campaign_All_tr_dELETE"> 
+                         		<%= link_to_remove_fields image_tag("btn_Delete2.png"), f %>
+                         </div>
+                         
+                  </div><!-- END TR -->                     
+  <% f.fields_for :answers do |builder| %>
+    <%= render 'answer_fields', :f => builder %>
+  <% end %>
+  
+  <div id="new_content_Question_All_tr"><!-- TR -->
+                    		<div id="new_content_Question_All_tr_btnAdd"> 
+                            	<%= link_to_add_fields image_tag("btn_AddAnswer.png"), f, :answers %>
+                             </div>
+                            
+                        </div><!-- END TR -->
+</div>
+</div><!-- End Question All -->

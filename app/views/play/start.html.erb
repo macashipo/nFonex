@@ -1,0 +1,27 @@
+    <script type="text/javascript" charset="utf-8">  
+          $(function () {  
+      new Highcharts.Chart({  
+        chart: { renderTo: 'orders_chart' },  
+        title: { text: 'Test Charts' },  
+        xAxis: { type: 'datetime' },  
+        yAxis: {  
+          title: { text: 'Dollars'}  
+        },  
+        series: [{  
+      pointInterval: <%= 1.day * 1000 %>,  
+      pointStart: <%= 3.weeks.ago.at_midnight.to_i * 1000 %>,  
+      data: [1, 2, 5, 7, 3]  
+    }]  
+        
+      });  
+    });  
+    </script>  
+<%= form_for @participant do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.text_field :campaign_id %> 
+  </p>
+  <p><%= f.submit "Submit" %></p>
+  <div id="orders_chart" style="width: 560px; height: 300px;"></div>  
+<% end %>
+

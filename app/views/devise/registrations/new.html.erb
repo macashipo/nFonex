@@ -1,0 +1,67 @@
+<div id="content"><!-- Open_content -->
+        <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+   
+
+
+
+        	<div id="login_content"><!-- Open__Login_content -->
+            	<div id="SignUp_content_top">
+                </div>
+                <div id="SignUp_content_SignUp_Middle"><!-- Open__Login_conten_Middle -->
+                	<div id="login_content_SignIn_Middle_tr0">
+                    </div>
+                	<div id="login_content_SignIn_Middle_tr"><!-- Open__Login_conten_Middle_tr -->
+                    	<div id="login_content_SignIn_Middle_tr_td1">
+                        	<%= f.label :email %>
+                        </div>
+                        <div id="login_content_SignIn_Middle_tr_td2">
+                        	<%= f.email_field :email ,:size=>'50'%>
+                        </div>
+                    </div><!-- End_Login_conten_Middle_tr -->
+                    
+                    <!-- ------------------------------------------- -->
+                    <div id="login_content_SignIn_Middle_tr"><!-- Open__Login_conten_Middle_tr -->
+                    	<div id="login_content_SignIn_Middle_tr_td1">
+                        	<%= f.label :password %>
+                        </div>
+                        <div id="login_content_SignIn_Middle_tr_td2">
+                        	<%= f.password_field :password ,:size=>'50'%>
+                        </div>
+                    </div><!-- End_Login_conten_Middle_tr -->
+                    
+                    <!-- ------------------------------------------- -->
+                    <div id="login_content_SignIn_Middle_tr"><!-- Open__Login_conten_Middle_tr -->
+                    	<div id="login_content_SignIn_Middle_tr_td1">
+                        	<%= f.label :password_confirmation %>
+                        </div>
+                        <div id="login_content_SignIn_Middle_tr_td2">
+                        	<%= f.password_field :password_confirmation,:size=>'50' %>
+                        </div>
+                   
+                    </div><!-- End_Login_conten_Middle_tr -->
+                    
+                     <!-- <%= render :partial => "devise/shared/links" %>------------------------------------------- -->
+                    <div id="login_content_SignIn_Middle_tr"><!-- Open__Login_conten_Middle_tr -->
+                    	<div id="login_content_SignIn_Middle_tr_td1">
+                        	
+                        </div>
+                        <div id="login_content_SignIn_Middle_tr_td2"> 
+                       		 
+                       		 <div><%= f.submit "Sign up", :type => :image, :src=> '/images/btn_Signup.png?1316578624' %></div>
+                       		 
+                        </div>
+                  
+                    </div><!-- End_Login_conten_Middle_tr -->
+                    
+                    <div id="login_content_SignIn_Middle_tr">
+                    	
+                    </div>
+                
+                </div><!-- End_Login_conten_Middle -->
+            	<div id="SignUp_content_SignUp_bottom">
+                </div>
+            </div><!-- End_Login_content -->
+        	                    <% end %>
+ 		</div><!-- End_content -->

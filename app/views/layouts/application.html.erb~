@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title><%= h(yield(:title) || "Untitled") %></title>
+	<%= stylesheet_link_tag 'css' %>
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,300,400,600,700,800&amp;v2" media="screen, projection" rel="stylesheet" type="text/css" /> 
+    <%= javascript_include_tag :defaults, "nested_form" %>
+        <!-- <%= javascript_include_tag "jquery-1.4.2.min", "rails", "highcharts" %>   -->
+    <%= yield(:head) %>
+  </head>
+  <body>
+    <div id="wrapper"><!-- open wrapper -->
+    
+   	  <div id="header"><!-- open header -->
+        	<div id="header_banner">
+            </div>
+            
+    <div id="header_menu"><!-- open header _menu-->
+            	<div id="header_menu_button"><!-- open header _menu_button-->
+            	  <ul>
+            	    <li><a href="#">Dashboard</a></li>
+            	    <li><a href="#">Campaign</a></li>
+            	    <li style="border-right-style:none"><a href="#">Participant</a></li>
+          	   	 </ul>
+	</div><!-- End header _menu_button-->
+                
+                <div id="header_menu_SignOut">
+		<% if user_signed_in? %>
+		    Welcome <%= current_user.email %>. Not you?
+		    <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+		  <% else %>
+		    <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>    
+		  <% end %>
+                </div>
+                <div id="header_menu_User"><!-- Open header_menu_User-->
+           			<a href="#"></a>
+       			</div><!-- End header_menu_User-->
+                <div id="header_menu_welcome"><!-- Open header_menu_welcome-->
+                	Welcome
+           		</div><!-- End header_menu_welcome-->
+                
+           	</div><!-- End header_menu -->
+            
+            <div id="header_title"><!-- open header_title -->
+            	<div id="header_title_left">
+                </div>
+                <div id="header_title_middle"><!-- header_title_middle -->                
+				<div id="header_title_middle_title">
+                		<h1><%= yield(:title).upcase%></h1>
+                		</div>
+			    
+                		<%if yield(:title)== "Campaigns"%>
+				<div id="header_title_middle_btn_NewCampaign">                 		
+				<%= link_to "New Campaign", new_campaign_path %>			                 		
+			        </div>
+			        <%end%>
+                    
+                  		
+                  		<%if yield(:title)== "Show Campaign"%>
+                  			<div id="view_header_btnED_Campaign"><!-- Open BTN EDIT and Delete -->
+                  			<div id="view_header_btnED_Campaign_Edit">
+                       		<%= link_to "EDIT", edit_campaign_path(@campaign) %>
+				</div>
+				<div id="view_header_btnED_Campaign_Delete">
+					<%= link_to "Destroy", @campaign, :confirm => 'Are you sure?', :method => :delete %>
+				</div>
+                  		 
+                  		</div><!-- End BTN EDIT and Delete -->
+                  		<%end%> 
+               	</div><!-- End header_title_middle -->   
+                    
+                <div id="header_title_right">
+                	
+                </div>
+            </div><!-- End header_title -->
+            
+        </div><!-- End header -->
+                    	
+        <!-- ---------------------- -->                    
+      <%= yield %>  
+        <!-- ---------------------- -->
+        
+        <div id="footer"><!-- open footer-->
+      		
+            <div id="footer_top">
+            	<div id="footer_top_left">
+               		Shop the DQN Online Store , visit an DQN
+               		 <a href="#">Retail Store</a> 
+       		   		 or 
+                     <a href="#">find a reseller</a>
+                </div>
+                <div id="footer_top_right">
+           		  <a href="#">DQN info</a> | 
+               	  <a href="#">Hot news</a> | 
+           		  <a href="#">RSS feed</a> | 
+               	  <a href="#">Career Opportunities</a> | 
+               	  <a href="#">Support</a> | 
+           	 	  <a href="#">Contact Us</a> |  
+                	<a href="#">Sitemap</a>
+                </div>
+            </div><!-- End top -->
+            
+            <div id="footer_bottom">
+            	Copyright © 2010 by www.dqn.vn. All Rights Reserved.  Terms of Use  Privacy Policy
+				<br />Under website license, no: 32/GP-TTDT issued on date 6/Aug/2008 by MIC.
+
+            </div>
+      
+      </div><!-- End footer-->
+        
+    </div><!-- End wrapper -->
+    </div>
+  </body>
+</html>

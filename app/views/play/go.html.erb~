@@ -1,0 +1,70 @@
+﻿<% title "Campaign" %>
+
+<div id="content"><!-- Open_content -->
+        	<div id="view_content_tr1"><!-- Open content_tr1 -->
+            	<div id="view_content_tr1_campaign">
+                	Campaign 
+                </div>
+                <div id="view_content_tr1_title">
+                	<%= @campaign.name %>
+                	(<%= @campaign.status%>)
+                </div>
+				<% for question in @campaign.questions %>   
+    
+
+                <div id="view_content_question1_tr1_btn">	
+                        	<div id="view_content_question1_tr1_btn_btnEdit">
+                          </div>
+                            <div id="view_content_question1_tr1_btn_btnDelete">
+                            </div>
+                      </div><!-- end btn -->
+            </div><!-- End content_tr1 -->
+             <div id="view_content_question1"><!-- question 1 -->
+                	<div id="view_content_question1_tr1"><!-- qusetion 1_tr1 -->
+                    	<div id="view_content_question1_tr1_textSTT">
+                        	Question <%= question.index_question %>:
+                        </div>
+                        <div id="view_content_question1_tr1_textQuestion" class="textQuestion">
+                        	<%= question.content %>
+                        </div>
+                        <div id="view_content_question1_tr1_btn">	
+                        	<div id="view_content_question1_tr1_btn_btnEdit">
+                            </div>
+                            <div id="view_content_question1_tr1_btn_btnDelete">
+                            </div>
+                        </div><!-- end btn -->
+                    </div><!-- End qusetion 1_tr1 -->
+                    
+                    <!-- ------------------------ -->
+					<% for answer in question.answers %>
+      
+    
+                    <div id="view_content_question1_tr1"><!-- qusetion 1_tr1 -->
+                    	<div id="view_content_question1_tr1_textSTT"></div>
+                        <div id="view_content_question1_tr1_textQuestion">
+                        	 
+                        	<% if answer.correct?%>
+                        	<b><u><%=h answer.content %></b></u>
+                        	<%else%>
+                        	<%=h answer.content %>
+                        	<%end%>
+                        </div>
+                        <div id="view_content_question1_tr1_btn">	
+                        	<div id="view_content_question1_tr1_btn_btnEdit">
+                          </div>
+                            <div id="view_content_question1_tr1_btn_btnDelete">
+                            </div>
+                      </div><!-- end btn -->
+                    </div><!-- End qusetion 1_tr1 -->
+                    
+                    <!-- ------------------------ -->                    
+                <% end %>
+                
+                           <% end %>
+ 		</div><!-- End_content -->
+
+<p>  
+  <%= link_to "Edit", edit_campaign_path(@campaign) %> |  
+  <%= link_to "Destroy", @campaign, :confirm => 'Are you sure?', :method => :delete %> |  
+  <%= link_to "View All", campaigns_path %>  
+</p>  
